@@ -1,0 +1,31 @@
+/* Здесь идет обнуление дефолтных стилей браузера */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Если укказываем какой то тег то это означет примини стили ко всем тегам */
+p {
+  color: violet;
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: red;
+}
+
+div {
+  width: 800px;
+  height: 800px;
+  border: 4px solid #008000;
+  /* border: none;  у элемента не было краев*/
+  border-radius: 50%;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
