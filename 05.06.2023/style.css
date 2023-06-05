@@ -1,0 +1,73 @@
+/* p {
+  color: red;
+  text-align: center;
+} */
+
+/* для работы с id, пишем хештег(#) и после этого пишем название id */
+/* #first_text {
+  text-align: center;
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+} */
+
+/* для работы с class, пишем точку(.) и после этого пишем название class-а */
+/* .second_text {
+  text-align: right;
+  color: blue;
+  font-size: 50px;
+} */
+
+/* 5 */
+/* .class1 {
+  text-align: center;
+}
+
+.class2 {
+  font-size: 40px;
+}
+
+.class3 {
+  color: red;
+  text-align: right;
+} */
+
+/* У нас нечего не заработает */
+/* #id1 {
+  text-align: center;
+}
+
+#id2 {
+  font-size: 40px;
+}
+
+#id3 {
+  color: red;
+} */
+
+/* 7 */
+
+.class_1 {
+  color: springgreen;
+}
+
+p {
+  color: red;
+}
+
+/* Ответ на вопрос */
+/* 
+.btn {
+  width: 140px;
+  height: 60px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+}
+
+.error {
+  background-color: red;
+}
+.success {
+  background: green;
+} */
