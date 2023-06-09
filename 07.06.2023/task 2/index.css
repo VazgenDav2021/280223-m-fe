@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightseagreen;
+  padding: 10px 15px;
+}
+
+.navbar__logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar__menu li {
+  padding: 10px 15px;
+}
+
+.navbar__menu li:hover {
+  border-radius: 20px;
+  background-color: salmon;
+}
+
+.navbar__menu li a {
+  color: slateblue;
+}
+
+/* Кнопки бургера не должны быть ведны при декстопе */
+.navbar__togleBtn {
+  display: none;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Цвет линий в бургере */
+.navbar__togleBtn span {
+  display: none;
+  width: 20px;
+  height: 1px;
+  background-color: red;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar__togleBtn,
+  .navbar__togleBtn span {
+    display: flex;
+  }
+
+  /* Здесь ставим   display: none; чтобы если у элемента не было класса active он не  показвывался */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Добвялем к меню класс  active чтобы он показывался */
+  .navbar__menu.active {
+    display: flex;
+  }
+}

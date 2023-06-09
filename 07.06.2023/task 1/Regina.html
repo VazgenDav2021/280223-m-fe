@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        justify-content: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      table {
+        border: dotted 5px green;
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px 0;
+      }
+
+      th {
+        background-color: #ededed;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 8px;
+      }
+
+      tbody tr:nth-child(even) td {
+        background-color: #f2f2f2;
+      }
+
+      .BC gray {
+        background-color: #c1c1c1;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  1. Создать таблицы с тегами 
+        thead tbody td -->
+    <!-- 2. В таблице укзатаь друзьей -->
+    <!-- 3. Заголовк (шапка таблицы должна быть более выроженной) -->
+    <!-- 4. Каждый четный элемент таблицы должен иметь задний фон серый -->
+    <!-- 5. В конце отправиьт мне html и в самом низу своими словами объяаснить 
+    thead tbody td кот за что отевчает  -->
+    <h1>Моя Семья!</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vladimiros</td>
+          <td>37</td>
+          <td>Wesel</td>
+        </tr>
+        <tr>
+          <td class="BC gray">Regina</td>
+          <td class="BC gray">31</td>
+          <td class="BC gray">Wesel</td>
+        </tr>
+        <tr>
+          <td>Ioannis</td>
+          <td>9</td>
+          <td>Wesel</td>
+        </tr>
+        <tr>
+          <td class="BC gray">Filippos</td>
+          <td class="BC gray">5</td>
+          <td class="BC gray">Wesel</td>
+        </tr>
+        <tr>
+          <td>Markos</td>
+          <td>4</td>
+          <td>Wesel</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<!-- <thead>` - задает заголовок таблицы, отображается на самом верху таблицы и содержит строки, определяющие заголовки столбцов;
+- `<tbody>` - задает тело таблицы, где находятся строки с данными;
+- `<td>` - задает ячейки внутри таблицы, содержащие сами данные. -->
