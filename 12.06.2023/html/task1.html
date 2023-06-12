@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circle {
+        height: 400px;
+        width: 400px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        animation-name: example;
+        animation-duration: 14s;
+        animation-delay: 2s;
+      }
+
+      @keyframes example {
+        0% {
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          top: 0px;
+          left: 1328px;
+        }
+        50% {
+          top: 600px;
+          left: 1328px;
+        }
+        75% {
+          top: 600px;
+          left: 0px;
+        }
+        100% {
+          left: 0px;
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle"></div>
+  </body>
+</html>

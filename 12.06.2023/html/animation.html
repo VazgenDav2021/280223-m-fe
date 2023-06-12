@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      div {
+        width: 350px;
+        height: 350px;
+        background-color: red;
+        animation-name: animation1; /*даем название анимации по этому элементу*/
+        animation-duration: 5s; /*указывем сколько времени будет проходить данная анимация*/
+        animation-delay: 2s; /* указываем через скоько времени должна начатся анимация */
+        /* animation: animation1 2s; */ /*боле короткий способ*/
+        /* animation-iteration-count: 2; сколько раз должна выполнится анимация */
+        animation-iteration-count: infinite; /*анимация будет длится бесконечно*/
+      }
+
+      /*     
+       @keyframes animation1 {
+        инициализируем анимацию и говорим что и как должно проходить
+        from {
+          какие значения у меня должны быть в начале анимации
+          width: 400px;
+          height: 200px;
+          background-color: red;
+        }
+       to {
+          какие значения у меня должны быть в конце анимации
+          width: 450px;
+          height: 600px;
+          background-color: blue;
+        }
+      }
+      */
+
+      @keyframes animation1 {
+        0% {
+          width: 350px;
+          height: 350px;
+          background-color: red;
+        }
+        25% {
+          background-color: blue;
+          width: 450px;
+          height: 500px;
+        }
+        50% {
+          background-color: green;
+          width: 250px;
+          height: 500px;
+          margin: 0 auto;
+        }
+        75% {
+          background-color: brown;
+          width: 100px;
+          height: 500px;
+          margin: 50px auto;
+        }
+
+        100% {
+          background-color: aqua;
+          width: 450px;
+          height: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
+
+<!-- создать круг который с левого вехнего края идет в  правый верхний край,
+    потом спускается в  правый нижний край, потом идет в левый нижний край,
+    потом идет назад в левый врхний края 
+-->
