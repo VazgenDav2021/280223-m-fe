@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* поскольку body и html занимают столько места сколько занимают дочерние элементы */
+  /* добавляем это стили для того чотбы они не смотря на размерность их дочерних эелементов имели полную разменость всего экерана */
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  background: #fff;
+  /* ставимм для того чтобы у нас была тень снизу */
+  box-shadow: 0px 4px 40px 0px #0000001a;
+  /* делаем внутренний отступ сверху-снизу 25px, с лева,права 30px */
+  padding: 25px 30px;
+  /* для того чтобы позицианировать дочерние элементы используем display: flex; */
+  display: flex;
+  /* для того чотбы фотко пошли вправо  */
+  justify-content: flex-end;
+  /* поскольку размер фоток разный у них отцентровка тоже разная, поэтому ставим align-items: center; */
+  /* чтобы они отцентравались по ветикали однакво */
+  align-items: center;
+  /* ставим 30пх чтобы ростаяние между фотками было 30px */
+  gap: 30px;
+}
+
+.notification {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 300px;
+  background: #3746aa;
+  height: 100%;
+  /* поставил fixed, чтобы при скорлле он у меня был фиксированный */
+  position: fixed;
+  /* поставил flex для того чотбы манипулировать с дочерними элементами */
+  display: flex;
+  flex-direction: column;
+  /* сделал для того чтобы текст пошел в центер */
+  align-items: center;
+  /* сделал внутренний верхний отступ 30px */
+  padding-top: 30px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  /* для того чтобы наш текст занимал столько сколько место сколько ему надо, не больше */
+  height: fit-content;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  width: 100%;
+  height: 64px;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  border-left: 6px solid #fff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.mainBlock {
+  width: 83%;
+  height: 500px;
+  margin: 0px 300px;
+  padding: 30px;
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #3746aa;
+}
+
+.pageText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #98999e;
+  margin-top: 10px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3746aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle span {
+  height: inherit;
+}
+
+.inputWrapper {
+  width: 518px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px #0000000f;
+  margin-top: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.inputWrapper input {
+  width: 100%;
+  height: 100%;
+  border-color: transparent;
+}
+
+.inputWrapper img {
+  width: 18px;
+  height: 18px;
+}
