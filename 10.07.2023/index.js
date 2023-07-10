@@ -166,15 +166,50 @@
 
 // Если у нас название ключа и переменная в которой хранится значение совпадают то значние можно не писать
 
-const returnsInfo = (name, age, city) => {
-  return {
-    name,
-    age,
-    city,
-  };
-};
+// const returnsInfo = (name, age, city) => {
+//   return {
+//     name,
+//     age,
+//     city,
+//   };
+// };
 
 // console.log(returnsInfo("Vazgen", 23, "Yerevan"));
 
 // const { name, age, city } = returnsInfo("Vazgen", 23, "Yerevan");
 // const result = returnsInfo("Vazgen", 23, "Yerevan");
+
+// const product = {
+//   name: "Iphone",
+//   image: "/images/iphone.png",
+//   text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, inventore sit! Recusandae et quisquam, veritatis totam assumenda impedit exercitationem in illo quam id iusto accusantium, voluptates, explicabo sequi sapiente! Tempore?",
+//   oldPrice: 1200,
+//   price: 1500,
+//   discount: 20,
+// };
+
+// function printInfoAboutProduct(product) {
+//   const { name, price } = product;
+
+//   if (price > 1000) {
+//     return `Product ${name} is VIP, becuase it costs more than ${price} eurous`;
+//   } else {
+//     return `Product ${name} is regular product that everbydoy cann afford it `;
+//   }
+// }
+
+// console.log(printInfoAboutProduct(product));
+
+const user = {
+  name: "Vazgen",
+  age: 23,
+  location: "Armenia",
+  password: "Qwerty123",
+  proffesion: "Lecturer",
+};
+
+// раздели мой объект на две части: первый это значение пароля, а ...otherData это у меня остальной объект
+const { password, ...otherData } = user;
+console.dir(`We get info about user here it is ${JSON.stringify(otherData)}`, {
+  depth: null,
+});
