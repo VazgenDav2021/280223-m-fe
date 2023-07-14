@@ -200,16 +200,16 @@
 
 // console.log(printInfoAboutProduct(product));
 
-const user = {
-  name: "Vazgen",
-  age: 23,
-  location: "Armenia",
-  password: "Qwerty123",
-  proffesion: "Lecturer",
-};
+// const user = {
+//   name: "Vazgen",
+//   age: 23,
+//   location: "Armenia",
+//   password: "Qwerty123",
+//   proffesion: "Lecturer",
+// };
 
-// раздели мой объект на две части: первый это значение пароля, а ...otherData это у меня остальной объект
-const { password, ...otherData } = user;
-console.dir(`We get info about user here it is ${JSON.stringify(otherData)}`, {
-  depth: null,
-});
+// // раздели мой объект на две части: первый это значение пароля, а ...otherData это у меня остальной объект
+// const { password, ...otherData } = user;
+// console.dir(`We get info about user here it is ${JSON.stringify(otherData)}`, {
+//   depth: null,
+// });
