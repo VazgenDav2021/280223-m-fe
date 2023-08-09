@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.btn_add{
+    padding: 10px;
+    background: green;
+    color: #fff;
+}
+
+.form{
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 20px auto;
+}
+
+
+.form input {
+    border: 1px solid grey;
+}
+
+.hidden{
+    display: none;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+            border-bottom: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h1>Section 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, id?</p>
+    </section>
+
+    <section id="section2">
+        <h1>Section 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, id?</p>
+    </section>
+
+    <section id="section3">
+        <h1>Section 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, id?</p>
+    </section>
+
+
+    <script>
+
+        function smothScrollTo(target){
+            // получив значенеи (это у нас id элемента) мы обращаемся к нему через метод querySelector
+            const element = document.querySelector(target);
+            // и говорим при прокрутки на него пусть она будет плавной.
+            // Если не зададим "{behavior:"smooth"}" то прокрутка будет резкой
+            element.scrollIntoView({behavior:"smooth"});
+        }
+
+        // берем все ссылки нашего документа
+        const links = document.querySelectorAll("a");
+
+        // пробегаясь по ним каждому навешиваем обарботчик события
+        links.forEach(eachLink=>{
+            eachLink.addEventListener("click", function(e){
+                // отменяем дфолтное поведения бразуера так как при клике на ссылку у нас по дефолты должна перезагрузится вкладка
+                e.preventDefault();
+                // с помищю мета getAttribute берем значение которое указана в атрибуте "href" элемента "a"
+                const atributesValue = this.getAttribute("href");
+                // полусив значение из "href"-а мы передаем его в функцию
+                smothScrollTo(atributesValue)
+            })
+        })
+    </script>
+</body>
+</html>
