@@ -1,0 +1,88 @@
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: serif;
+        font-size: 24px;
+    }
+
+    #buttonForm {
+        margin: 25px;
+        padding: 25px;
+        display: flex;
+        background-color: rgb(206, 206, 205);
+    }
+
+    .submit {
+        padding: 5px;
+        margin-left: 15px;
+    }
+
+    button {
+        padding: 5px 15px;
+        margin-left: 15px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    label {
+        margin-right: 25px;
+    }
+</style>
+
+<body>
+
+    <form class="buttonForm">
+        <label for="red">Red:
+            <input type="number" id="red" min="0" max="255" required>
+        </label>
+        <label for="green">Green:
+            <input type="number" id="green" min="0" max="255" required>
+        </label>
+        <label for="blue">Blue:
+            <input type="number" id="blue" min="0" max="255" required>
+        </label>
+        <label for="buttonText">Button Text:
+            <input type="text" id="buttonText" required>
+        </label>
+
+        <button type="submit" class="submit">Add Button</button>
+    </form>
+
+    <!-- создаем контейнер для новых кнопок -->
+    <div class="buttonContainer"></div>
+    <script>
+        // 2 переменные получаем элемент формы и контейнер для кнопок
+        const buttonForm = document.querySelector('.buttonForm');
+        const buttonContainer = document.querySelector('.buttonContainer');
+
+        // добавлем обработчик события сабмит для формы
+        buttonForm.addEventListener('submit', function (event) {
+            // отменяет стандартое поведение (предотвращает перезагрузку страницы)
+            event.preventDefault();
+
+            // получаем значения полей ввода и присваеваем к переменным 67-70 строку
+            const red = document.getElementById('red').value;
+            const green = document.getElementById('green').value;
+            const blue = document.getElementById('blue').value;
+            const buttonText = document.getElementById('buttonText').value;
+
+            // создание новой кнопки
+            const newButton = document.createElement('button');
+            // добавление в нее текста
+            newButton.innerText = buttonText;
+            // с помощью стилей присваеваем backgroundColor извлекая все цвета с помощью интерполяции
+            newButton.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            // задаем цвет текста кнопки
+            newButton.style.color = 'white';
+
+            // доавляем эту кнопку в buttonContainer
+            buttonContainer.appendChild(newButton);
+
+            // очистка полей формы
+            buttonForm.reset();
+        });
+    </script>
+
+</body>

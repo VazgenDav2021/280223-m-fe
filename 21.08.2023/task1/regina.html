@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form label {
+            margin-bottom: 5px;
+        }
+
+        .form input[type="number"],
+        .form input[type="text"] {
+            padding: 5px;
+            border: 1px solid rgb(233, 247, 207);
+            box-shadow: rgb(138, 219, 46);
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .form input[type="submit"],
+        .create_button {
+            padding: 10px 20px;
+            background-color: #fcba03;
+            box-shadow: rgb(138, 219, 46);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .create_button {
+            margin-top: 20px;
+        }
+
+        .create_button:hover {
+
+            background: linear-gradient(45deg, #fff722, #ff26f9), linear-gradient(142deg, transparent, white), linear-gradient(108deg, red, transparent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="red">Red:</label>
+        <input type="number" name="red" min="0" max="255" required>
+
+        <label for="green">Green:</label>
+        <input type="number" name="green" min="0" max="255" required>
+
+        <label for="blue">Blue:</label>
+        <input type="number" name="blue" min="0" max="255" required>
+
+        <label for="value">Value:</label>
+        <input type="text" name="value" required>
+
+        <input class="my_form" type="submit" value="Submit">
+    </form>
+
+    <div class="container"></div>
+
+
+    <script>
+        // обращаемся к форме
+        const form = document.querySelector('form');
+        // обращаемся к контейнру для новых кнопок
+        const container = document.querySelector(".container");
+        // добавляем к форме слушатель события submit
+        // в результате сабмится у нас появлется объект "событиия"
+        form.addEventListener('submit', function (event) {
+            // поскольку во время сабмита у нас по дефолут перезагружается браузер
+            // мы пишем 91 строку чтобы отменить дефолтное поведение браузера (перезагрузку)
+            event.preventDefault();
+            // обращаемся к форме используя событие при клике
+            const form = event.target;
+            // обращаемся к инпутам
+            const inputs = form.querySelectorAll('input[name]');
+            // делаем деструктуризацию массива из inputов
+            const [color1, color2, color3, buttonValue] = inputs;
+            // создаем новую кнопку
+            const newButton = document.createElement("button");
+            // задаем стили новой кнопки 101-103
+            newButton.style.backgroundColor = `rgb(${color1.value}, ${color2.value}, ${color3.value})`;
+            newButton.textContent = buttonValue.value;
+            newButton.style.color = '#fff';
+            // добавляем в контейнер новазоданную кнопку
+            container.prepend(newButton);
+        });
+    </script>
+</body>
+
+</html>
