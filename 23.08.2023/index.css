@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh; /* посмотреть что делает vh vw */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+}
+
+.container {
+  width: 90%;
+  height: max-content;
+  border: 4px solid red;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  max-width: 350px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 10px; */
+  justify-content: center;
+  margin: 20px;
+}
+
+.item .img {
+  width: 250px;
+  height: 200px;
+}
+
+.item .title {
+  font-size: 27px;
+}
+
+.item .text {
+  font-size: 18px;
+  text-align: center;
+}
+
+.item .btn {
+  cursor: pointer;
+  padding: 9px 5px;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: darkmagenta;
+  color: #fff;
+  border: none;
+}
+
+/* примернить данные стили когда у меня шиеина девайса = 600пх */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 50%;
+    border: none;
+  }
+  .item {
+    width: 300px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .item .btn {
+    width: 100%;
+    height: max-content;
+    font-size: 20px;
+  }
+}
