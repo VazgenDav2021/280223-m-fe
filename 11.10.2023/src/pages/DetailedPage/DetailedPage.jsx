@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 const DetailedPage = () => {
     // с помощю хука useParams беру динамичный id из ссыли(url) продукта для дальнейшего запроса для получения онформации о нем
@@ -16,10 +17,12 @@ const DetailedPage = () => {
 
     useEffect(() => {
         getCurrrentProduct()
-    }, [])
+    }, []);
 
     return (
-        <div>DetailedPage</div>
+        <div>
+            <ProductCard {...product} />
+        </div>
     )
 }
 
