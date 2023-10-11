@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 const DetailedPage = () => {
-    // с помощю хука useParams беру динамичный id продукта для дальнейшего запроса для получения онформации о нем
+    // с помощю хука useParams беру динамичный id из ссыли(url) продукта для дальнейшего запроса для получения онформации о нем
     const { vazgenId } = useParams();
     const [product, setProduct] = useState({})
 
@@ -14,7 +14,6 @@ const DetailedPage = () => {
         })
     }
 
-    console.log({ product });
     useEffect(() => {
         getCurrrentProduct()
     }, [])
