@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Navbar from './components/Navbar/Navbar'
-import DetailedPage from './components/DetailedPage/DetailedPage'
+import DetailedPage from './pages/DetailedPage/DetailedPage'
 import './App.css'
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       {/* Показываем компонент Home если клиент находится на директоии / или оснавной страницы */}
         <Route path='/' Component={Home} />
         <Route path='/about' Component={About} />
-        <Route path='product/:vazgenId' Component={DetailedPage} />
+        <Route path='/product/:vazgenId' Component={DetailedPage} />
       </Routes>
     </>
   )
