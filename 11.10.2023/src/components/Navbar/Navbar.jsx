@@ -22,6 +22,7 @@ const Navbar = () => {
                 {menuItems.map((item, index) => {
                     return (
                         <li key={index}>
+                        {/* прописываем ссылки вместо a используем Link для того чтобы не было перезагрузки */}
                             <Link to={item.url}>
                                 {item.title}
                             </Link>

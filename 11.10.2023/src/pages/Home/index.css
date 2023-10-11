@@ -1,5 +1,8 @@
-.home {
+.home{
     width: 100%;
     height: 100vh;
-    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 100px 40px;
+    gap: 20px;
 }

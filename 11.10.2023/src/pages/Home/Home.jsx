@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ProductCard from '../../components/ProductCard/ProductCard'
 import './index.css'
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  // делаем запрос и получаем продукты
+  const getProduct = async () => {
+    await fetch("https://fakestoreapi.com/products").then(async res => {
+      const data = await res.json();
+      setProducts(() => {
+        return [...data]
+      })
+    })
+  }
+
+  useEffect(() => {
+    getProduct()
+  }, [])
+
   return (
     <div className='home'>
-    Home lorem Home 
-    lorem Home lorem Home lorem 
-    Home lorem Home lorem Home lorem 
-    Home lorem Home lorem Home lorem Home 
-    lorem Home lorem Home lorem Home lorem
-    Home lorem Home lorem Home lorem Home 
-    lorem Home lorem Home lorem Home lorem 
-    Home lorem Home lorem Home lorem Home lorem 
-    Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem Home lorem </div>
+    {/* итеративно проходимся по массиву продуктов и показывем его в компоненте ProductCard */}
+      {products.map((product, idx) => {
+        return <ProductCard {...product} key={idx} />
+      })}
+    </div>
   )
 }
 
 export default Home
-
-
-// 1. Создать новую страницу Contact в котором будет фотография, текст
-// 2. На страницу home about добавить еще несколько элементов
-// 3. В навигации добавить новую ссылку на старницу Contact

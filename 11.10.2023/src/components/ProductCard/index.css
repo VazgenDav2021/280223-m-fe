@@ -1,0 +1,19 @@
+.product{
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.product h1 {
+    text-align: center;
+}
+
+.product img {
+    min-width: 150px;
+    max-height: 200px;
+}
