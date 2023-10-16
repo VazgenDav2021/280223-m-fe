@@ -41,7 +41,7 @@ const UserList = () => {
   // берем список пользоватлей из нашего общего хранилищя
   const {users} = useSelector(state=>state.users)
   return <div>
-    {users?.map((eachUser, index) => (<li onClick={()=>onDelete(index)} key={index}>{eachUser.name}</li>))}
+    {users?.map((eachUser, index) => (<li key={index}>{eachUser.name}</li>))}
   </div>
 }
 
