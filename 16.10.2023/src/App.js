@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addUser, decrement, incrmenet } from './featrues/actions/action';
+import { addUser, decrement, incrmenet, removeUser } from './featrues/actions/action';
 import './App.css'
 
 
@@ -37,10 +37,11 @@ const ButtonsComponent = () => {
 
 
 const UserList = () => {
+
   // берем список пользоватлей из нашего общего хранилищя
   const {users} = useSelector(state=>state.users)
   return <div>
-    {users?.map((eachUser, index) => (<li key={index}>{eachUser.name}</li>))}
+    {users?.map((eachUser, index) => (<li onClick={()=>onDelete(index)} key={index}>{eachUser.name}</li>))}
   </div>
 }
 
@@ -60,7 +61,8 @@ const Users = () => {
     dispatch(addUser(user))
     // очищаем поля
     setUser({name:'', age:""})
-  }
+  }  
+
   return <div>
     <label>
       Name: <input type='text' name='name' value={user.name} onChange={handleChangeUserValue} />

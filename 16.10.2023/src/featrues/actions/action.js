@@ -22,3 +22,10 @@ export const addUser = (payload) =>{
         payload
     }
 }
+
+export const removeUser = (payload)=>{
+    return {
+        type: REMOVE_USER,
+        payload
+    }
+}
