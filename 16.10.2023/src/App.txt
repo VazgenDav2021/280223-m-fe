@@ -1,0 +1,32 @@
+import React, { useState } from 'react'
+import './App.css'
+
+
+const ChildComponent = ({ counter, incrementCounter, decrementCounter }) => {
+  return <>
+    <h1>{counter}</h1>
+    <ButtonsComponent incrementCounter={incrementCounter} decrementCounter={decrementCounter} />
+  </>
+}
+
+const ButtonsComponent = ({ incrementCounter, decrementCounter }) => {
+  return <>
+    <button onClick={decrementCounter}>-</button>
+    <button onClick={incrementCounter}>+</button>
+  </>
+}
+
+const App = () => {
+  const [counter, setCounter] = useState(0)
+  const incrementCounter = () => setCounter(prevState => prevState + 1);
+  const decrementCounter = () => setCounter(prevState => prevState - 1);
+
+
+  return (
+    <div>
+      <ChildComponent counter={counter} decrementCounter={decrementCounter} incrementCounter={incrementCounter} />
+    </div>
+  )
+}
+
+export default App
