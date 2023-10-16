@@ -13,6 +13,7 @@ const App = () => {
     const dispatch = useDispatch();
 
   const addToOne = () =>{
+    // вызываем даную функию и в нее в качестве параметра передаем incrmenet для увелечения значения на 1
     dispatch(incrmenet())
   }
 
