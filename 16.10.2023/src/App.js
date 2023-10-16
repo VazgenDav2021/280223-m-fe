@@ -37,11 +37,15 @@ const ButtonsComponent = () => {
 
 
 const UserList = () => {
-
+  const dispatch = useDispatch()
+  const removeUserFromList = (id)=>{
+    dispatch(removeUser(id))
+  }
   // берем список пользоватлей из нашего общего хранилищя
   const {users} = useSelector(state=>state.users)
   return <div>
-    {users?.map((eachUser, index) => (<li key={index}>{eachUser.name}</li>))}
+  {/* не хорошая практика в пропы  добавлять колбэки */}
+    {users?.map((eachUser, index) => (<li onClick={() => removeUserFromList(index)} key={index}>{eachUser.name}</li>))}
   </div>
 }
 
