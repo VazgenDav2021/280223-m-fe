@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { addTodo, removeItemFromTodo } from './featrues/action'
 import './App.css';
 
-const EachTodo = ({ task, index, tasks, setTasks }) => {
-  const deleteTask = (index) => {
-    const updatedTasks = [...tasks];
-    updatedTasks.splice(index, 1);
-    setTasks(updatedTasks);
+const EachTodo = ({ task, index }) => {
+  const dispatch = useDispatch()
+  const deleteTask = () => {
+    dispatch(removeItemFromTodo(index))
   };
 
   return <li>
@@ -17,17 +18,16 @@ const EachTodo = ({ task, index, tasks, setTasks }) => {
 }
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const {todos} = useSelector(state=>state)
+  const dispatch = useDispatch();
   const [newTask, setNewTask] = useState('');
 
   const addTask = () => {
     if (newTask.trim() !== '') {
-      setTasks([...tasks, newTask]);
+      dispatch(addTodo(newTask))
       setNewTask('');
     }
   };
-
-
   return (
     <div className="App">
       <h1>Простое To-Do Приложение</h1>
@@ -41,8 +41,8 @@ function App() {
         <button onClick={addTask}>Добавить</button>
       </div>
       <ul className="task-list">
-        {tasks.map((task, index) => (
-          <EachTodo task={task} tasks={tasks} setTasks={setTasks} key={index} />
+        {todos?.map((task, index) => (
+          <EachTodo task={task} key={index} index={index} />
         ))}
       </ul>
     </div>
