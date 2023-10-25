@@ -1,0 +1,10 @@
+h1{
+    margin: 20px;
+}
+
+a{
+    padding: 10px;
+    cursor: pointer;
+    background-color: yellow;
+    margin: 10px;
+}
