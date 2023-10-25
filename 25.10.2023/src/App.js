@@ -37,18 +37,7 @@
 
 
 
-import React, { createContext, useContext, useState } from 'react';
-
-// список пользователей
-const usersList = [
-  { username: "user1", id: 1, email: "user1@example.com" },
-  { username: "user2", id: 2, email: "user2@example.com" },
-  { username: "user3", id: 3, email: "user3@example.com" },
-  { username: "user4", id: 4, email: "user4@example.com" },
-  { username: "user5", id: 5, email: "user5@example.com" },
-  { username: "user6", id: 6, email: "user6@example.com" },
-  { username: "user7", id: 7, email: "user7@example.com" }
-]
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 // создаем контекст для переброски пользвоатлеей и их методов к компонентам
 const UsersContext = createContext();
@@ -57,7 +46,18 @@ const UsersContext = createContext();
 // создаем провайдер для обетки приложения
 const UsersProvider = ({ children }) => {
   // создаем состояние для хранение и изменения списка пользователей
-  const [users, setUser] = useState(usersList);
+  const [users, setUser] = useState([]);
+
+  const getUsers = async() =>{
+    await fetch('https://jsonplaceholder.typicode.com/users').then(async(data)=>{
+      const res = await data.json()
+      setUser(()=>([...res]))
+    })
+  }
+
+  useEffect(()=>{
+    getUsers()
+  },[])
 
   // добавление нового пользователя в список
   const addUser = (newUser) => {
@@ -159,5 +159,8 @@ const App = () => {
   )
 }
 
+
+// 1 Создать каунтер с помщю react context
+// 2 Должно значение и функции для увеличения и уменьшения значения
 
 export default App
